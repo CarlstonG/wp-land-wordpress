@@ -3,6 +3,6 @@
 Wordpress Landing Page
 ===
 
-Wordpress Custom Post Type Landing Pages
+Wordpress Custom Post Type Landing Page
 
 
