@@ -76,7 +76,7 @@ Container::make( 'post_meta',( 'Section Featured Products' ) )
                 ->show_on_page(6)
                 ->add_fields( array(
 	   Field::make( 'separator', 'crb_slider', __( 'Featured Products' ) ) ,
-       Field::make( 'complex', 'slide_products', 'Featured Products Slide' )->set_max(8) //maximum 4 bloks
+       Field::make( 'complex', 'slide_products', 'Featured Products Slide' )->set_max(8)
        ->add_fields( 'text', 'Featured Products Slide', array(
 	  Field::make( 'image', 'slide_img', 'Image') ->set_width( 30 ),	   
       Field::make( 'text', 'slide_title', 'Title') ->set_width( 30 ),
@@ -91,6 +91,7 @@ Container::make( 'post_meta',( 'Section Testimonial' ) )
 		Field::make( 'separator', 'crb_testimonial', __( 'Testimonial Slide' ) ) ,
 		Field::make( 'text', 'testimonial_title', 'Title'),	 
          Field::make( 'complex', 'testimonial', 'Testimonial Slider' )->set_max(4) //maximum 3 bloks
+		 ->set_collapsed( true )
                 ->add_fields( 'text', 'Testimonial User Description', array(
 					  Field::make( 'image', 'user_img', 'User Image')->set_width( 20 ),
                        Field::make( 'text', 'user_name', 'User Name')->set_width( 20 ),
