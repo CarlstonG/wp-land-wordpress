@@ -56,8 +56,8 @@ while ( $loop->have_posts() ) : $loop->the_post();?>
             'format' => '/page/%#%',
             'current' => $current_page,
             'total' => $total_pages,
-            'prev_text'    => __('« Назад'),
-            'next_text'    => __('Далее »'),
+            'prev_text'    => __('« Back'),
+            'next_text'    => __('Next »'),
         ));
     }    
 
