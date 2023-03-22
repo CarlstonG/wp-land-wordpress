@@ -19,17 +19,7 @@ if ( ! defined( '_S_VERSION' ) ) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-// add_action( 'after_setup_theme', 'crb_load' );
-// function crb_load() {
-//     require_once( 'inc/carbon-fields/vendor/autoload.php' );
-//     \Carbon_Fields\Carbon_Fields::boot();
-// }
-
-// add_action('carbon_fields_register_fields', 'register_carbon_fields');
-// function register_carbon_fields() {
-//   require_once( 'inc/custom_fields/theme-options.php' );
-//   require_once( 'inc/custom_fields/post-meta.php' );
-// }	
+	
 
 
 function wpland_setup() {
