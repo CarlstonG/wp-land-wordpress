@@ -24,26 +24,26 @@ get_header();
 							Product Detail
 						</h3>
 					</div>
-	                  <?php if (  carbon_get_post_meta(get_the_ID(), 'product_width') ){ ?>
+	                   
 							<div class="product__property_row">
 								<span class="product__property_label">Width</span>
-								<span class="product__property_value"><?php echo carbon_get_post_meta(get_the_ID(), 'product_width'); ?> cm</span>
+								<span class="product__property_value"><?php the_field('product_width') ?> cm</span>
 							</div>
-					    <?php } ?>
+					   
 					
-					        <?php if (  carbon_get_post_meta(get_the_ID(), 'product_height') ){ ?>
+					      
 							<div class="product__property_row">
 								<span class="product__property_label">Height</span>
-								<span class="product__property_value"><?php echo carbon_get_post_meta(get_the_ID(), 'product_height'); ?> cm</span>
+								<span class="product__property_value"><?php the_field('product_height') ?> cm</span>
 							</div>
-						<?php } ?>
+						
 					
-					<?php if (  carbon_get_post_meta(get_the_ID(), 'product_price') ){ ?>
+					
 					        <div class="product__property_row">
 								<span class="product__property_label">Price</span>
-								<span class="product__property_value"><?php echo carbon_get_post_meta(get_the_ID(), 'product_price'); ?> $</span>
+								<span class="product__property_value"> <?php the_field("product_price") ?> $</span>
 							</div>
-					<?php } ?>
+					
 					
 					<div class="product__property_row popup">
 						<a href="#" data-fancybox data-src="#product__order" class="button order-button">Order</a>

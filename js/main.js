@@ -1,4 +1,3 @@
-
 const navBar = document.querySelector('.main-navigation');
 const navBtn = document.querySelector('.hamburger');
 navBtn.addEventListener('click', function () {
@@ -44,6 +43,27 @@ const userSlide = new Swiper(".userSlide", {
           prevEl: ".swiper-button-prev",
         },
       });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    function checkScroll() {
+        var scrollPosition = window.pageYOffset;
+        if (scrollPosition > 200) {
+            document.getElementById("scroll-to-top").classList.add("show");
+        } else {
+            document.getElementById("scroll-to-top").classList.remove("show");
+        }
+    }
+
+    document.getElementById("scroll-to-top").addEventListener("click", function() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
+    window.addEventListener("scroll", checkScroll);
+});
 
 
 

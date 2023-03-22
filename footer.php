@@ -13,6 +13,7 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="container">
+			<div id="scroll-to-top"><svg id="icon-to-top" height="35px" version="1.1" viewBox="0 0 512 512" width="35px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon points="396.6,352 416,331.3 256,160 96,331.3 115.3,352 256,201.5 "/></svg></div>
 		<div class="site-footer-line">
 			<div>
 				<h2 class="site-title"><?php bloginfo( 'name' ); ?></h2>
@@ -42,6 +43,7 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+
 
 </body>
 </html>

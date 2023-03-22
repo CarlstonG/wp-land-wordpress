@@ -19,17 +19,17 @@ if ( ! defined( '_S_VERSION' ) ) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-add_action( 'after_setup_theme', 'crb_load' );
-function crb_load() {
-    require_once( 'inc/carbon-fields/vendor/autoload.php' );
-    \Carbon_Fields\Carbon_Fields::boot();
-}
+// add_action( 'after_setup_theme', 'crb_load' );
+// function crb_load() {
+//     require_once( 'inc/carbon-fields/vendor/autoload.php' );
+//     \Carbon_Fields\Carbon_Fields::boot();
+// }
 
-add_action('carbon_fields_register_fields', 'register_carbon_fields');
-function register_carbon_fields() {
-  require_once( 'inc/custom_fields/theme-options.php' );
-  require_once( 'inc/custom_fields/post-meta.php' );
-}	
+// add_action('carbon_fields_register_fields', 'register_carbon_fields');
+// function register_carbon_fields() {
+//   require_once( 'inc/custom_fields/theme-options.php' );
+//   require_once( 'inc/custom_fields/post-meta.php' );
+// }	
 
 
 function wpland_setup() {
@@ -61,6 +61,7 @@ function wpland_setup() {
 		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		*/
 	add_theme_support( 'post-thumbnails' );
+	 
     
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
@@ -288,6 +289,41 @@ function wpland_create_post_type() {
 
 
 
+/*ACF*/ 
+if( function_exists('acf_add_options_page') ) {
+	
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'General Settings',
+		'menu_title'	=> 'Theme Options',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'icon_url'		=> 'dashicons-admin-generic',
+		'redirect'		=> false
+	));		
+	
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Home Page Settings',
+		'menu_title'	=> 'Home Page',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+}
+
+
+// Remove p tags from Contact Form 7 form
+add_filter('wpcf7_autop_or_not', '__return_false');
+
+function wpland_excerpt_length( $length ) {
+    return 22;
+}
+add_filter( 'excerpt_length', 'wpland_excerpt_length');
+
+function wpland_excerpt_more( $more ) {
+    return '';
+}
+add_filter( 'excerpt_more', 'wpland_excerpt_more' );
 
 
 

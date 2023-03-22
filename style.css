@@ -1222,11 +1222,15 @@ textarea {
 	justify-content: center;
 }
 #product__property {
-		max-width: 400px;
-		padding: 10px 30px 30px 30px;
+		max-width: 440px;
+		padding: 30px;
 		border-radius: 4px;
 	    width: 100%;
-	}
+}
+#product__property .wpcf7-form-control {
+	margin:5px 0;
+	width: 100%;
+}
 #product__order {
 	    max-width: 460px;
 		padding: 20px;
@@ -1387,6 +1391,7 @@ textarea {
 .blog-article {
 	display:flex;
 	padding-top: 25px;
+	padding-bottom: 25px;
 }
 .blog-article main{
 	width: 70%;
@@ -1435,6 +1440,20 @@ textarea {
 .blog-article .entry-footer span {
 	margin: 2px 5px;
 }
+.post-type-archive-product .pagination {
+	margin-bottom: 20px;
+}
+.grid {
+	display:grid;
+	grid-gap:30px;
+}
+.taxonomy-wrapper {
+	grid-template-columns:repeat(3, 1fr);
+}
+section.categories {
+	padding: 40px 0;
+}
+
 .site-footer {
     background-color: #23262F;
     color: var(--wht-color);
@@ -1476,7 +1495,7 @@ textarea {
 
 .post,
 .page {
-	margin: 0 0 1.5em;
+	margin: 0;
 }
 
 .updated:not(.published) {
@@ -1699,6 +1718,41 @@ textarea {
 	margin-bottom: 1.5em;
 }
 
+#scroll-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	width:55px;
+	height:55px;
+	cursor:pointer;
+	border-radius:50%;
+	background:#1b4c4a;
+	color:#fff;
+}
+#scroll-to-top:hover {
+	background:#0a837e;
+}
+#scroll-to-top.show {
+    opacity: 1;
+	z-index:100;
+}
+#icon-to-top polygon {
+  fill: #f6f6f6;
+}
+.shop-now{
+	display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+}
+.shop-now .button{
+	margin-top: -1px;
+}
 /* Media Queries
 --------------------------------------------- */
 
@@ -1732,6 +1786,9 @@ textarea {
 	.swiper-button-prev {
 		left: 26px;
 	}
+	.taxonomy-wrapper {
+	grid-template-columns:repeat(2, 1fr);
+   }
 }
 @media only screen and (max-width : 768px) {
 	.counter {
@@ -1741,8 +1798,9 @@ textarea {
 		width: 50%;
 		padding: 18px;
 	}
-	.features-wrapper, .furniture-wrapper {
-   
+	.features-wrapper, 
+	.furniture-wrapper,
+	.taxonomy-wrapper {
     grid-template-columns: repeat(1, 1fr);
     
 }

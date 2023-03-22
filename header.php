@@ -71,11 +71,9 @@
         <div class="main-home--desc">
 
 			<h1>
-				<?php echo carbon_get_post_meta( $page_id, 'header_title' );?>
+				<?php the_field("home_header_title", "option") ?>
 			</h1>
-       <div><p>
-		   <?php echo carbon_get_post_meta( $page_id, 'header_descr' );?>
-		   </p></div>
+       <div><?php the_field("home_header_text", "option") ?></div>
         </div>
    </div>     
 </div>
