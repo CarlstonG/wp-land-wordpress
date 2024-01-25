@@ -1,8 +1,8 @@
 
 
-Wordpress Landing Page
+ Custom Landing Page
 ===
 
-Wordpress Custom Post Type Landing Page and Advanced Custom Fields plugin
+Wordpress Custom Post Type Landing Page
 
 
